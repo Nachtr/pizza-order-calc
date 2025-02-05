@@ -1,1 +1,101 @@
+Firstly we need to define the problem:
+The Problem: Calculate the total cost of the pizza order based on the follow factors:
+- Pizza Size (Small or Large)
+- Number of toppings
+- Delivery distance
 
+Therefor our inputs are:
+- User indicates through input command the size of pizza (small or large) # Consider using a dict to make numbers easier to calculate.
+- User enters the number of toppings.
+- User enters the total mileage to their home
+
+Outputs:
+- We need to print the total cost using an f-string.
+  - Maybe something like print(f"The total for the {size} pizza is {price}
+    - This is not exactly how it wil be displayed, but it will probably be something close to this.
+
+
+
+Secondly, lets outline a possible solution:
+1. We first need to prompt the user for inputs on:
+  - Pizza Size
+  - Number of toppings
+  - Total distance for delivery in Miles
+2. We then need to build an algorithm/function for calculating the base cost:
+  1. Base cost of the pizza:
+    - A small pizza is $8
+    - A large pizza is $12
+  2. Topping costs:
+    - each additional topping is $1
+  3. Delivery Fees
+    - $2 for the first 5 miles
+    - $1 for each additional mile
+3. Computing the total cost:
+  - We need to find the base cost, toppings cost, and delivery fee and then sum it up.
+4. Output/print the final price.
+
+Next, we need to define key or critical variables and data structures that will be used in our pseudocode.
+- pizza_size (string?)
+- num_toppings (integer and not float)
+- delivery_distance (float)
+- base_price (float) #  indicates the price of the pizza
+- topping_cost (float)
+- delivery_fee (float) # for this we should use operators, and maybe a few smaller variables to define the total distance
+- total_cost (float) # Sum of all of it
+
+Pseudocode:
+//Step 1: Total pizza cost
+print("enter pizza size (small or large): ")
+input(pizza_size) # will trigger the user to enter the size
+# convert the string to lower case for easy use
+
+# make the fail safe for if the user says anything else besides small or large.
+while pizza_size is not in ["small", "large"]
+  print("Invalid Input. Please refer to "small" or "large"")
+  input("enter pizza size (small or large)")
+  conver the string to lower case
+
+# toppings
+print("enter number of toppings: ")
+input(num_toppings)
+
+# toppings fail safe
+while num_toppings is not an integer < 0
+  print("Invalid input. Please enter a number that is non-negative."
+  input(num_toppings)
+  convert to integer, or use some sort of ending code to convert.
+
+# delivery distance
+print("Enter delivery distance in miles: ")
+input(delivery_distance)
+
+# delivery fail safe to ensure no negative miles 
+while delivery_distance is not a number or delivery_distance < 0
+  print("Invalid input. Please enter a non-negative number.")
+  convert the number to float since mileage might be with decimal
+
+//Step 2: Define a dictionary for pizza prices to make it easier to calc
+set pizza_prices = {
+  "small": 8.00,
+  "large": 10.00
+}
+
+//Step 3: Calculations for base price of pizza without toppings
+set base_price = pizza_prices[pizza_size]
+
+//Step 4: Calculate topping costs after base price
+set topping_costs = num_toppings * 1
+
+//Step 5: Calculate delivery fee per distance
+If delivery_distance == 0 then
+  set delivery_fee = 0
+else if delivery_distance <= 5 then
+  set delivery_fee = 2
+else
+  set delivery_fee = (delivery_distance - 5?) * 1 # I dont know if this will work but we will try it
+
+//Step 6: Computing total cost
+set total_cost = base_price + topping_cost + delivery_fee
+
+//Step 7: Display final cost
+print(f"Your total order cost for a {pizza_size} with {num_toppings} toppings and delivery distnace of {delivery_distance} miles is ${total_cost}
