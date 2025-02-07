@@ -98,4 +98,4 @@ else
 set total_cost = base_price + topping_cost + delivery_fee
 
 //Step 7: Display final cost
-print(f"Your total order cost for a {pizza_size} pizza with {num_toppings} toppings and delivery distnace of {delivery_distance} miles is ${total_cost}
+print(f"Your total order cost for a {pizza_size} pizza with {num_toppings} toppings and delivery distance of {delivery_distance} miles is ${total_cost}
